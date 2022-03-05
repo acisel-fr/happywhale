@@ -1,1 +1,1 @@
-# happywhale
+# HappyWhale Competitions
