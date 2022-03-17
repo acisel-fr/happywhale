@@ -1,21 +1,44 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "id": "e9266554",
+   "metadata": {
+    "papermill": {
+     "duration": 0.034949,
+     "end_time": "2022-03-17T12:39:05.278517",
+     "exception": false,
+     "start_time": "2022-03-17T12:39:05.243568",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Label a sample of pictures\n",
+    "\n",
+    "We would like to label pictures with bounding box. Unfortunately, with 51033 pictures, we avoid to label all of them. Instead, we would like to label a sample of them. This sample should represent the shape variability of our population. We will then stratify the sampling by specy.\n",
+    "\n",
+    "## Corrected dataset\n",
+    "\n",
+    "Let us load the corrected metadata."
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "c205cacd",
+   "id": "3f624c60",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2022-03-17T12:36:20.762505Z",
-     "iopub.status.busy": "2022-03-17T12:36:20.758890Z",
-     "iopub.status.idle": "2022-03-17T12:36:21.066599Z",
-     "shell.execute_reply": "2022-03-17T12:36:21.064862Z"
+     "iopub.execute_input": "2022-03-17T12:39:05.351746Z",
+     "iopub.status.busy": "2022-03-17T12:39:05.348406Z",
+     "iopub.status.idle": "2022-03-17T12:39:05.656037Z",
+     "shell.execute_reply": "2022-03-17T12:39:05.655211Z"
     },
     "papermill": {
-     "duration": 0.338989,
-     "end_time": "2022-03-17T12:36:21.066827",
+     "duration": 0.34459,
+     "end_time": "2022-03-17T12:39:05.656197",
      "exception": false,
-     "start_time": "2022-03-17T12:36:20.727838",
+     "start_time": "2022-03-17T12:39:05.311607",
      "status": "completed"
     },
     "tags": []
@@ -48,55 +71,21 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "f5da5c40",
-   "metadata": {
-    "papermill": {
-     "duration": 0.027799,
-     "end_time": "2022-03-17T12:36:21.125800",
-     "exception": false,
-     "start_time": "2022-03-17T12:36:21.098001",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "source": [
-    "We would like to label pictures with bounding box. Unfortunately, with 51033 pictures, we avoid to label all of them. Instead, we would like to label a sample of them. This sample should represent the shape variability of our population. We will then stratify the sampling by specy."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "fcc63456",
-   "metadata": {
-    "papermill": {
-     "duration": 0.027127,
-     "end_time": "2022-03-17T12:36:21.181107",
-     "exception": false,
-     "start_time": "2022-03-17T12:36:21.153980",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "source": [
-    "## Corrected dataset"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "e1dfd6d1",
+   "id": "00aac79f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2022-03-17T12:36:21.280421Z",
-     "iopub.status.busy": "2022-03-17T12:36:21.237584Z",
-     "iopub.status.idle": "2022-03-17T12:36:21.648974Z",
-     "shell.execute_reply": "2022-03-17T12:36:21.647346Z"
+     "iopub.execute_input": "2022-03-17T12:39:05.773188Z",
+     "iopub.status.busy": "2022-03-17T12:39:05.740001Z",
+     "iopub.status.idle": "2022-03-17T12:39:06.312877Z",
+     "shell.execute_reply": "2022-03-17T12:39:06.313667Z"
     },
     "papermill": {
-     "duration": 0.441886,
-     "end_time": "2022-03-17T12:36:21.649130",
+     "duration": 0.61764,
+     "end_time": "2022-03-17T12:39:06.313863",
      "exception": false,
-     "start_time": "2022-03-17T12:36:21.207244",
+     "start_time": "2022-03-17T12:39:05.696223",
      "status": "completed"
     },
     "tags": []
@@ -456,13 +445,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7cf71ee6",
+   "id": "104a0000",
    "metadata": {
     "papermill": {
-     "duration": 0.029456,
-     "end_time": "2022-03-17T12:36:21.708818",
+     "duration": 0.044703,
+     "end_time": "2022-03-17T12:39:06.403547",
      "exception": false,
-     "start_time": "2022-03-17T12:36:21.679362",
+     "start_time": "2022-03-17T12:39:06.358844",
      "status": "completed"
     },
     "tags": []
@@ -474,19 +463,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "66f99540",
+   "id": "f2f98006",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2022-03-17T12:36:21.781100Z",
-     "iopub.status.busy": "2022-03-17T12:36:21.779064Z",
-     "iopub.status.idle": "2022-03-17T12:36:21.897151Z",
-     "shell.execute_reply": "2022-03-17T12:36:21.895042Z"
+     "iopub.execute_input": "2022-03-17T12:39:06.492850Z",
+     "iopub.status.busy": "2022-03-17T12:39:06.492126Z",
+     "iopub.status.idle": "2022-03-17T12:39:06.585523Z",
+     "shell.execute_reply": "2022-03-17T12:39:06.584842Z"
     },
     "papermill": {
-     "duration": 0.15916,
-     "end_time": "2022-03-17T12:36:21.897322",
+     "duration": 0.139905,
+     "end_time": "2022-03-17T12:39:06.585662",
      "exception": false,
-     "start_time": "2022-03-17T12:36:21.738162",
+     "start_time": "2022-03-17T12:39:06.445757",
      "status": "completed"
     },
     "tags": []
@@ -644,13 +633,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8920d858",
+   "id": "20402f70",
    "metadata": {
     "papermill": {
-     "duration": 0.032256,
-     "end_time": "2022-03-17T12:36:21.964687",
+     "duration": 0.047971,
+     "end_time": "2022-03-17T12:39:06.678172",
      "exception": false,
-     "start_time": "2022-03-17T12:36:21.932431",
+     "start_time": "2022-03-17T12:39:06.630201",
      "status": "completed"
     },
     "tags": []
@@ -658,25 +647,25 @@
    "source": [
     "## Indexing all observations\n",
     "\n",
-    "In order to get a representative sampling, we index all observations by specy and individual."
+    "In order to get a representative sampling, we index all observations by specy and individual. This will be used afterwards to select files to label."
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "0e08a8f8",
+   "id": "2d02f487",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2022-03-17T12:36:22.038980Z",
-     "iopub.status.busy": "2022-03-17T12:36:22.036808Z",
-     "iopub.status.idle": "2022-03-17T12:36:23.102373Z",
-     "shell.execute_reply": "2022-03-17T12:36:23.100559Z"
+     "iopub.execute_input": "2022-03-17T12:39:06.772454Z",
+     "iopub.status.busy": "2022-03-17T12:39:06.770922Z",
+     "iopub.status.idle": "2022-03-17T12:39:07.563339Z",
+     "shell.execute_reply": "2022-03-17T12:39:07.562666Z"
     },
     "papermill": {
-     "duration": 1.103293,
-     "end_time": "2022-03-17T12:36:23.102561",
+     "duration": 0.842351,
+     "end_time": "2022-03-17T12:39:07.563492",
      "exception": false,
-     "start_time": "2022-03-17T12:36:21.999268",
+     "start_time": "2022-03-17T12:39:06.721141",
      "status": "completed"
     },
     "tags": []
@@ -1038,19 +1027,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "373ab555",
+   "id": "8e78121e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2022-03-17T12:36:23.183063Z",
-     "iopub.status.busy": "2022-03-17T12:36:23.181230Z",
-     "iopub.status.idle": "2022-03-17T12:36:23.490424Z",
-     "shell.execute_reply": "2022-03-17T12:36:23.488502Z"
+     "iopub.execute_input": "2022-03-17T12:39:07.665723Z",
+     "iopub.status.busy": "2022-03-17T12:39:07.664937Z",
+     "iopub.status.idle": "2022-03-17T12:39:07.938048Z",
+     "shell.execute_reply": "2022-03-17T12:39:07.935940Z"
     },
     "papermill": {
-     "duration": 0.35145,
-     "end_time": "2022-03-17T12:36:23.490603",
+     "duration": 0.324757,
+     "end_time": "2022-03-17T12:39:07.938210",
      "exception": false,
-     "start_time": "2022-03-17T12:36:23.139153",
+     "start_time": "2022-03-17T12:39:07.613453",
      "status": "completed"
     },
     "tags": []
@@ -1077,14 +1066,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 6.688944,
-   "end_time": "2022-03-17T12:36:23.639953",
+   "duration": 8.242291,
+   "end_time": "2022-03-17T12:39:08.078654",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2022-03-17T12:36:16.951009",
+   "start_time": "2022-03-17T12:38:59.836363",
    "version": "2.3.3"
   }
  },
